@@ -1,0 +1,28 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ambiente local (não versionar secrets)
+.env
+.env.local
+.env.*.local
+
+# Logs e cache
+*.log
+.cache/
+
+# Dependências de projetos de prática (fora deste repo)
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+build/

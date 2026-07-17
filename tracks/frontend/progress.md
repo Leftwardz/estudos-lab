@@ -1,18 +1,16 @@
 # Progresso — Frontend
 
-| Módulo | Título | Status | Data |
-|--------|--------|--------|------|
-| 01 | HTML semântico | ⬜ Pendente | — |
-| 02 | CSS fundamentos | ⬜ Pendente | — |
-| 03 | CSS avançado | ⬜ Pendente | — |
-| 04 | JavaScript no browser | ⬜ Pendente | — |
-| 05 | Ferramentas de build | ⬜ Pendente | — |
-| 06 | TypeScript básico | ⬜ Pendente | — |
-| 07 | Framework: componentes | ⬜ Pendente | — |
-| 08 | Roteamento e estado | ⬜ Pendente | — |
-| 09 | Formulários e validação | ⬜ Pendente | — |
-| 10 | Testes e performance | ⬜ Pendente | — |
+| Módulo | Título | Concluído | Data |
+|--------|--------|-----------|------|
+| 01 | Vite + React | [ ] | — |
+| 02 | Componentes e props | [ ] | — |
+| 03 | useState e formulários | [ ] | — |
+| 04 | useEffect e fetch | [ ] | — |
+| 05 | Login JWT | [ ] | — |
+| 06 | React Router (rotas protegidas) | [ ] | — |
+| 07 | Chamadas autenticadas | [ ] | — |
+| 08 | Página de download/releases | [ ] | — |
+| 09 | UX (loading, erro) | [ ] | — |
+| 10 | Build e deploy estático | [ ] | — |
 
-**Progresso:** 0/10 (0%)
-
-Legenda: ⬜ Pendente · 🔄 Em andamento · ✅ Concluído
+**Progresso:** 0/10

@@ -1,63 +1,124 @@
-# Trilha: Git
+# Curriculum — Git
 
-Controle de versão distribuído — do básico ao fluxo profissional em equipe.
+Git profissional (fluxo empresa). Repo de prática: **git-sandbox**.
 
-## Módulos
+---
 
-### Módulo 01 — Introdução ao Git
-- O que é controle de versão
-- Git vs outros VCS
-- Instalação e configuração inicial (`user.name`, `user.email`)
-- **Exercício:** Configurar Git e criar primeiro repositório com `git init`
+### Módulo 01 — Repositório e primeiro fluxo
 
-### Módulo 02 — Commits e histórico
-- Staging area (`git add`)
-- Commits (`git commit`)
-- Log (`git log`, `git log --oneline --graph`)
-- **Exercício:** Fazer 5 commits em um projeto de texto
+**Conceitos**
+- Clone, working directory, staging, commit
+- Remote, push, pull
+- Histórico básico (`git log`)
 
-### Módulo 03 — Branches
-- O que são branches
-- Criar, listar e trocar (`git branch`, `git checkout`, `git switch`)
-- **Exercício:** Criar branch `feature/login` e fazer commits nela
+**Exercício**
+No `git-sandbox`: clone (ou `git init`), crie um arquivo, faça commit e push para o GitHub.
 
-### Módulo 04 — Merge
-- Fast-forward vs three-way merge
-- Resolver conflitos básicos
-- **Exercício:** Merge de `feature/login` em `main` com conflito simulado
+---
 
-### Módulo 05 — Remote e GitHub
-- `git remote`, `git push`, `git pull`, `git fetch`
-- Clonar repositórios
-- **Exercício:** Publicar repositório no GitHub e clonar em outra pasta
+### Módulo 02 — Branches no dia a dia
 
-### Módulo 06 — Fluxo Git Flow
-- Branches `main`, `develop`, `feature`, `release`, `hotfix`
-- Quando usar cada tipo
-- **Exercício:** Simular feature branch completa com PR
+**Conceitos**
+- Branch como linha de trabalho isolada
+- `git switch` / `git checkout`, criar e listar branches
+- Trabalhar em feature sem afetar `main`
 
-### Módulo 07 — Rebase e cherry-pick
-- `git rebase` interativo
-- `git cherry-pick`
-- Rebase vs merge
-- **Exercício:** Rebase de feature branch e cherry-pick de um commit
+**Exercício**
+Crie `feature/minha-alteracao`, faça 2 commits e volte para `main` sem merge ainda.
 
-### Módulo 08 — Stash e trabalho temporário
-- `git stash`, `git stash pop`, `git stash list`
-- Descartar mudanças (`git restore`, `git reset`)
-- **Exercício:** Guardar trabalho incompleto, trocar de branch e recuperar
+---
 
-### Módulo 09 — Tags e releases
-- Tags leves e anotadas
-- `git tag`, versionamento semântico
-- **Exercício:** Criar tag `v1.0.0` e push para remote
+### Módulo 03 — Pull Request no GitHub
 
-### Módulo 10 — Boas práticas e troubleshooting
-- Mensagens de commit convencionais
-- `.gitignore` avançado
-- `git reflog`, recuperar commits perdidos
-- **Exercício:** Recuperar commit "perdido" com reflog
+**Conceitos**
+- PR como revisão de código antes do merge
+- Review, comentários, aprovação
+- Squash merge vs merge commit
 
-## Critério de conclusão
+**Exercício**
+Abra PR da sua branch para `main`, peça review (ou simule), faça squash merge.
 
-Todos os 10 módulos marcados em `progress.md` com exercícios documentados em `sessoes/`.
+---
+
+### Módulo 04 — Conventional Commits
+
+**Conceitos**
+- Prefixos: `feat`, `fix`, `chore`, `docs`, `refactor`, `test`
+- Mensagem no imperativo, corpo opcional
+- Changelog e automação a partir de commits
+
+**Exercício**
+Reescreva ou faça 5 commits no `git-sandbox` seguindo Conventional Commits.
+
+---
+
+### Módulo 05 — Conflitos de merge
+
+**Conceitos**
+- Por que conflitos acontecem
+- Marcadores `<<<<<<<`, `=======`, `>>>>>>>`
+- Resolver manualmente e concluir merge
+
+**Exercício**
+Simule conflito (duas branches editando a mesma linha), resolva e complete o merge.
+
+---
+
+### Módulo 06 — Rebase interativo básico
+
+**Conceitos**
+- Rebase vs merge (histórico linear)
+- `git rebase -i` para squash e reordenar commits
+- Quando **não** rebasear (branch pública compartilhada)
+
+**Exercício**
+Use rebase interativo para juntar 3 commits pequenos em 1 commit `feat:` coerente.
+
+---
+
+### Módulo 07 — Desfazer mudanças
+
+**Conceitos**
+- `git restore` (working tree / staging)
+- `git reset` (soft, mixed, hard)
+- `git revert` (commit que desfaz outro)
+- `git reflog` para recuperar commits "perdidos"
+
+**Exercício**
+Crie cenários de erro e recupere usando restore, revert e reflog.
+
+---
+
+### Módulo 08 — Tags e releases (semver)
+
+**Conceitos**
+- Tags leves vs anotadas
+- Versionamento semântico (MAJOR.MINOR.PATCH)
+- Release no GitHub a partir de tag
+
+**Exercício**
+Crie tag `v1.0.0`, push da tag e publique release no GitHub.
+
+---
+
+### Módulo 09 — Gitignore e arquivos sensíveis
+
+**Conceitos**
+- O que nunca commitar (.env, chaves, credenciais)
+- Padrões em `.gitignore`
+- Remover arquivo já rastreado (`git rm --cached`)
+
+**Exercício**
+Configure `.gitignore` no `git-sandbox`; simule commit acidental de `.env` e corrija.
+
+---
+
+### Módulo 10 — Simulação de entrevista
+
+**Conceitos**
+- Fluxo completo: issue → branch → PR → review → merge → tag → deploy
+- Comunicação com o time (status, blockers)
+- Perguntas comuns em entrevistas sobre Git
+
+**Exercício**
+Explique em voz alta (ou por escrito em `sessoes/`) o fluxo feature → produção. Responda 5 perguntas de entrevista sobre Git.

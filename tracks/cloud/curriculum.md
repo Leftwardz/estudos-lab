@@ -1,50 +1,99 @@
-# Trilha: Cloud
+# Curriculum — Cloud (Azure)
 
-Computação em nuvem, serviços gerenciados e arquitetura distribuída.
+Azure aplicado. Repo de prática: **API + releases** das trilhas anteriores.
 
-## Módulos
+---
 
-### Módulo 01 — Introdução à nuvem
-- IaaS, PaaS, SaaS
-- Modelos de responsabilidade compartilhada
-- Provedores (AWS, GCP, Azure)
-- **Exercício:** Criar conta free tier e explorar console
+### Módulo 01 — Modelo mental (IaaS/PaaS/SaaS)
 
-### Módulo 02 — Compute na nuvem
-- VMs, serverless (Lambda, Cloud Functions)
-- Auto Scaling
-- **Exercício:** Deploy de função serverless "Hello World"
+**Conceitos**
+- IaaS, PaaS, SaaS — o que você gerencia vs o provedor
+- Responsabilidade compartilhada
+- Quando escolher cada modelo
 
-### Módulo 03 — Storage e CDN
-- Object storage (S3, GCS)
-- CDN e cache de borda
-- **Exercício:** Hospedar site estático no S3 + CloudFront
+**Exercício**
+Classifique 5 serviços Azure (VM, App Service, Blob, Postgres flexível, Entra ID) em IaaS/PaaS/SaaS.
 
-### Módulo 04 — Redes na nuvem
-- VPC, subnets, security groups
-- Load balancers
-- **Exercício:** Configurar VPC com subnet pública e privada
+---
 
-### Módulo 05 — Bancos gerenciados
-- RDS, Cloud SQL
-- Backups e réplicas de leitura
-- **Exercício:** Instância PostgreSQL gerenciada e conexão remota
+### Módulo 02 — Fundamentos Azure aplicados
 
-### Módulo 06 — Mensageria e filas
-- SQS, Pub/Sub, eventos
-- Padrão producer/consumer
-- **Exercício:** Fila com worker que processa mensagens
+**Conceitos**
+- Resource Group, Subscription, Region
+- Portal Azure e Azure CLI básico
+- Naming conventions e tags
 
-### Módulo 07 — Identidade e segurança (IAM)
-- Roles, policies, least privilege
-- Secrets Manager
-- **Exercício:** Role IAM para app acessar apenas bucket específico
+**Exercício**
+Crie Resource Group via portal ou CLI; liste recursos com `az resource list`.
 
-### Módulo 08 — Arquitetura e custos
-- Well-Architected Framework
-- Estimativa de custos, tags, budgets
-- **Exercício:** Diagrama de arquitetura e estimativa mensal
+---
 
-## Critério de conclusão
+### Módulo 03 — Blob storage para artefatos/releases
 
-Projeto deployado na nuvem com compute, storage e IAM configurados; 8 módulos em `progress.md`.
+**Conceitos**
+- Storage Account, containers, blobs
+- Upload de binários/releases
+- URLs e acesso (SAS ou público controlado)
+
+**Exercício**
+Suba um artefato de release (zip) no Blob e gere URL de download.
+
+---
+
+### Módulo 04 — Banco gerenciado Postgres
+
+**Conceitos**
+- Azure Database for PostgreSQL (Flexible Server)
+- Firewall, connection string
+- Backup automático
+
+**Exercício**
+Provisione Postgres gerenciado e conecte a API (local ou container).
+
+---
+
+### Módulo 05 — Hospedar API (App Service / Container Apps)
+
+**Conceitos**
+- App Service vs Container Apps
+- Deploy de imagem Docker
+- Variáveis de ambiente na plataforma
+
+**Exercício**
+Deploy da API containerizada no App Service ou Container Apps.
+
+---
+
+### Módulo 06 — DNS e HTTPS
+
+**Conceitos**
+- Domínio customizado
+- Certificado TLS (managed certificate)
+- HTTPS obrigatório em produção
+
+**Exercício**
+Configure domínio (ou subdomínio Azure) com HTTPS na API hospedada.
+
+---
+
+### Módulo 07 — Secrets (Key Vault)
+
+**Conceitos**
+- Azure Key Vault para secrets
+- DATABASE_URL, JWT_SECRET fora do código
+- Referência de secrets no App Service
+
+**Exercício**
+Armazene JWT_SECRET no Key Vault e injete na API hospedada.
+
+---
+
+### Módulo 08 — Monitoramento e custo
+
+**Conceitos**
+- Application Insights / Log Analytics
+- Alertas básicos
+- Cost Management, budgets, tags para custo
+
+**Exercício**
+Ative logs/métricas na API; configure budget alert; documente custo estimado mensal.

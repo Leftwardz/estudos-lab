@@ -1,16 +1,14 @@
 # Progresso — DevOps
 
-| Módulo | Título | Status | Data |
-|--------|--------|--------|------|
-| 01 | Cultura e práticas DevOps | ⬜ Pendente | — |
-| 02 | Docker fundamentos | ⬜ Pendente | — |
-| 03 | Docker Compose | ⬜ Pendente | — |
-| 04 | CI com GitHub Actions | ⬜ Pendente | — |
-| 05 | CD e deploy automatizado | ⬜ Pendente | — |
-| 06 | Kubernetes intro | ⬜ Pendente | — |
-| 07 | Terraform básico | ⬜ Pendente | — |
-| 08 | Observabilidade | ⬜ Pendente | — |
+| Módulo | Título | Concluído | Data |
+|--------|--------|-----------|------|
+| 01 | Docker conceitos | [ ] | — |
+| 02 | Dockerfile da API | [ ] | — |
+| 03 | docker-compose (api + postgres) | [ ] | — |
+| 04 | Ambientes e .env | [ ] | — |
+| 05 | CI testes (GitHub Actions) | [ ] | — |
+| 06 | CI lint opcional | [ ] | — |
+| 07 | Build de imagem no CI | [ ] | — |
+| 08 | Deploy manual documentado | [ ] | — |
 
-**Progresso:** 0/8 (0%)
-
-Legenda: ⬜ Pendente · 🔄 Em andamento · ✅ Concluído
+**Progresso:** 0/8

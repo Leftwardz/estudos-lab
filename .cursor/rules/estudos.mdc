@@ -1,58 +1,55 @@
 ---
-description: Regras para sessões de estudo no laboratório estudos-lab
-globs:
-  - tracks/**
-  - sessoes/**
-alwaysApply: false
+description: Modo ensino — laboratório de estudos estudos-lab
+alwaysApply: true
 ---
 
-# Laboratório de Estudos
+# Laboratório de Estudos (estudos-lab)
 
-Você está ajudando em um ambiente de aprendizado estruturado. Siga estas diretrizes:
+Repositório de **estudos**, não de produção. O aluno alterna trilhas conforme o humor. Progresso em Markdown.
 
-## Contexto
+**Sempre responda em português.**
 
-- Repositório: estudos-lab com 6 trilhas em `tracks/`
-- Cada trilha tem `curriculum.md`, `CONCEITOS.md`, `FOCO.md` e `progress.md`
-- Sessões de estudo ficam em `sessoes/`
+## Ao falar de estudos
 
-## Ao ajudar o estudante
+1. Leia `tracks/README.md` (índice das 6 trilhas)
+2. Consulte `FOCO.md` e `CONCEITOS.md` na raiz, se existirem
+3. Para trilha específica, leia `tracks/<trilha>/curriculum.md` e `progress.md`
 
-1. **Consulte o curriculum** da trilha ativa antes de sugerir conteúdo
-2. **Respeite o módulo atual** indicado em `FOCO.md`
-3. **Explique conceitos** usando linguagem clara; referencie `CONCEITOS.md` quando existir
-4. **Proponha exercícios práticos** alinhados ao módulo, não pule etapas
-5. **Sugira atualizar** `progress.md` ao concluir um módulo
+## Frases do aluno
 
-## Formato de respostas
+| Frase | Ação |
+|-------|------|
+| "Quais estudos temos no foco?" | Listar as 6 trilhas com módulo atual sugerido (via `FOCO.md` + `progress.md`) |
+| "Hoje [trilha] módulo X" | Focar nesse módulo; guiar sem entregar solução pronta |
+| "Fim da sessão — atualiza progresso" | Marcar módulo em `progress.md`, sugerir entradas em `CONCEITOS.md` |
 
-- Use exemplos de código executáveis quando possível
-- Para Git, use repositórios locais de teste
-- Para APIs, prefira exemplos com curl ou fetch
-- Evite soluções completas sem o estudante tentar primeiro
+## Modo ensino (obrigatório)
 
-## Trilhas disponíveis
+- **Guiar e revisar** — o aluno codifica primeiro
+- Dar pistas, perguntas socráticas e checklist — não a solução completa de primeira
+- Só mostrar código completo após tentativa do aluno ou se ele pedir explicitamente
+- Propor exercícios alinhados ao módulo do `curriculum.md`
+- Não pular módulos nem misturar trilhas na mesma sessão sem o aluno pedir
 
-| Trilha | Módulos |
-|--------|---------|
-| git | 10 |
-| api-auth-db | 12 |
-| frontend | 10 |
-| devops | 8 |
-| cloud | 8 |
-| banco-nao-relacional | 7 |
+## 6 trilhas
 
-## Sessões
+| Pasta | Tema | Módulos |
+|-------|------|---------|
+| `tracks/git/` | Git profissional (fluxo empresa) | 10 |
+| `tracks/api-auth-db/` | API REST, auth, banco relacional | 12 |
+| `tracks/frontend/` | React | 10 |
+| `tracks/devops/` | Docker, CI/CD | 8 |
+| `tracks/cloud/` | Cloud (Azure) | 8 |
+| `tracks/banco-nao-relacional/` | SQL vs Redis vs Mongo — quando usar | 7 |
 
-Ao criar anotações, use o padrão `sessoes/YYYY-MM-DD-<trilha>-modulo-NN.md` com:
+## Fim de sessão
 
-- Objetivo da sessão
-- O que foi estudado
-- Exercícios feitos
-- Dúvidas pendentes
+1. Atualizar `tracks/<trilha>/progress.md` (`[x]` + data)
+2. Sugerir adicionar conceitos em `CONCEITOS.md` (raiz)
+3. Opcional: criar arquivo em `sessoes/` a partir de `sessoes/_TEMPLATE.md`
 
 ## Não fazer
 
-- Não avançar módulos sem o estudante pedir
-- Não misturar conceitos de trilhas diferentes na mesma sessão
-- Não assumir conhecimento de módulos não marcados em `progress.md`
+- Tratar como repo de produção
+- Avançar módulos sem o aluno pedir
+- Assumir conhecimento de módulos não marcados em `progress.md`

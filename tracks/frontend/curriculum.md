@@ -1,57 +1,123 @@
-# Trilha: Frontend
+# Curriculum — Frontend (React)
 
-Desenvolvimento web do HTML/CSS ao JavaScript moderno e componentes reativos.
+React + Vite. Repo de prática: **projeto web separado**.
 
-## Módulos
+---
 
-### Módulo 01 — HTML semântico
-- Estrutura de documento, tags semânticas
-- Acessibilidade básica (alt, labels, landmarks)
-- **Exercício:** Página de perfil com HTML5 semântico
+### Módulo 01 — Vite + React
 
-### Módulo 02 — CSS fundamentos
-- Box model, flexbox, grid
-- Unidades (rem, em, %, vh/vw)
-- **Exercício:** Layout responsivo com Flexbox e Grid
+**Conceitos**
+- Scaffold com Vite (`npm create vite@latest`)
+- Estrutura de pastas, `main.jsx`, componente raiz
+- Dev server e hot reload
 
-### Módulo 03 — CSS avançado
-- Variáveis CSS, media queries
-- Transitions e animations
-- **Exercício:** Tema claro/escuro com CSS variables
+**Exercício**
+Crie app Vite + React e exiba "Hello" na tela.
 
-### Módulo 04 — JavaScript no browser
-- DOM, eventos, fetch
-- Async/await
-- **Exercício:** Lista de tarefas que consome API pública
+---
 
-### Módulo 05 — Ferramentas de build
-- npm, bundlers (Vite)
-- Módulos ES6
-- **Exercício:** Projeto Vite com estrutura de pastas
+### Módulo 02 — Componentes e props
 
-### Módulo 06 — TypeScript básico
-- Tipos, interfaces, generics intro
-- **Exercício:** Migrar projeto JS para TS
+**Conceitos**
+- Componentes funcionais
+- Props tipadas (ou PropTypes)
+- Composição de componentes
 
-### Módulo 07 — Framework: componentes
-- React ou Vue — componentes, props, state
-- **Exercício:** Componente `Button` e `Card` reutilizáveis
+**Exercício**
+Crie `Header`, `Card` e `Button` reutilizáveis com props.
 
-### Módulo 08 — Roteamento e estado
-- React Router ou Vue Router
-- Estado global (Context, Pinia)
-- **Exercício:** SPA com 3 rotas e estado compartilhado
+---
 
-### Módulo 09 — Formulários e validação
-- Controlled components
-- Validação client-side
-- **Exercício:** Formulário de cadastro com validação
+### Módulo 03 — useState e formulários
 
-### Módulo 10 — Testes e performance
-- Testes com Vitest/Testing Library
-- Lighthouse, lazy loading
-- **Exercício:** Testes de componente e otimização de bundle
+**Conceitos**
+- Estado local com `useState`
+- Controlled inputs
+- Submit de formulário
 
-## Critério de conclusão
+**Exercício**
+Formulário de login (email + senha) sem integrar API ainda.
 
-SPA funcional com roteamento, formulários e testes; 10 módulos em `progress.md`.
+---
+
+### Módulo 04 — useEffect e fetch
+
+**Conceitos**
+- `useEffect` para side effects
+- `fetch` para API pública ou mock
+- Loading state básico
+
+**Exercício**
+Busque lista de dados (mock ou API pública) e renderize em lista.
+
+---
+
+### Módulo 05 — Login JWT
+
+**Conceitos**
+- POST login, receber token
+- Armazenar token (localStorage ou memória)
+- Redirecionar após login
+
+**Exercício**
+Integre formulário de login com `/auth/login` da sua API.
+
+---
+
+### Módulo 06 — React Router (rotas protegidas)
+
+**Conceitos**
+- `react-router-dom`, rotas e navegação
+- Rota privada: redireciona se não autenticado
+- Layout com outlet
+
+**Exercício**
+Rotas `/login`, `/dashboard` (protegida) e `/releases`.
+
+---
+
+### Módulo 07 — Chamadas autenticadas
+
+**Conceitos**
+- Header `Authorization: Bearer <token>`
+- Wrapper ou interceptor de fetch
+- Tratar 401 (logout)
+
+**Exercício**
+Chame `GET /me` autenticado e exiba dados do usuário.
+
+---
+
+### Módulo 08 — Página de download/releases
+
+**Conceitos**
+- Consumir `GET /releases`
+- Listar versões, link de download
+- Integração com API do módulo 11 da trilha api-auth-db
+
+**Exercício**
+Página `/releases` listando versões da API.
+
+---
+
+### Módulo 09 — UX (loading, erro)
+
+**Conceitos**
+- Estados: loading, error, empty, success
+- Feedback visual (spinner, mensagem de erro)
+- Desabilitar botão durante submit
+
+**Exercício**
+Adicione loading e tratamento de erro em login e lista de releases.
+
+---
+
+### Módulo 10 — Build e deploy estático
+
+**Conceitos**
+- `npm run build`, pasta `dist/`
+- Variáveis de ambiente (`VITE_API_URL`)
+- Deploy estático (GitHub Pages, Azure Static Web Apps, etc.)
+
+**Exercício**
+Gere build de produção e documente passos de deploy estático.

@@ -1,18 +1,16 @@
 # Progresso — Git
 
-| Módulo | Título | Status | Data |
-|--------|--------|--------|------|
-| 01 | Introdução ao Git | ⬜ Pendente | — |
-| 02 | Commits e histórico | ⬜ Pendente | — |
-| 03 | Branches | ⬜ Pendente | — |
-| 04 | Merge | ⬜ Pendente | — |
-| 05 | Remote e GitHub | ⬜ Pendente | — |
-| 06 | Fluxo Git Flow | ⬜ Pendente | — |
-| 07 | Rebase e cherry-pick | ⬜ Pendente | — |
-| 08 | Stash e trabalho temporário | ⬜ Pendente | — |
-| 09 | Tags e releases | ⬜ Pendente | — |
-| 10 | Boas práticas e troubleshooting | ⬜ Pendente | — |
+| Módulo | Título | Concluído | Data |
+|--------|--------|-----------|------|
+| 01 | Repositório e primeiro fluxo | [ ] | — |
+| 02 | Branches no dia a dia | [ ] | — |
+| 03 | Pull Request no GitHub | [ ] | — |
+| 04 | Conventional Commits | [ ] | — |
+| 05 | Conflitos de merge | [ ] | — |
+| 06 | Rebase interativo básico | [ ] | — |
+| 07 | Desfazer mudanças | [ ] | — |
+| 08 | Tags e releases (semver) | [ ] | — |
+| 09 | Gitignore e arquivos sensíveis | [ ] | — |
+| 10 | Simulação de entrevista | [ ] | — |
 
-**Progresso:** 0/10 (0%)
-
-Legenda: ⬜ Pendente · 🔄 Em andamento · ✅ Concluído
+**Progresso:** 0/10

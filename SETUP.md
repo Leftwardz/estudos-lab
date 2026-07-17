@@ -1,76 +1,69 @@
-# Setup do Laboratório de Estudos
+# Setup — estudos-lab
 
-Guia para configurar o ambiente e começar a estudar nas trilhas.
-
-## Pré-requisitos
-
-| Ferramenta | Versão mínima | Verificar |
-|------------|---------------|-----------|
-| Git        | 2.30+         | `git --version` |
-| Node.js    | 20 LTS        | `node --version` |
-| Docker     | 24+           | `docker --version` |
-| Docker Compose | 2.20+     | `docker compose version` |
-
-### Opcionais por trilha
-
-| Trilha | Ferramentas extras |
-|--------|--------------------|
-| api-auth-db | PostgreSQL 15+, Postman ou Insomnia |
-| frontend | npm ou pnpm |
-| devops | kubectl, Terraform |
-| cloud | Conta AWS/GCP/Azure (free tier) |
-| banco-nao-relacional | MongoDB, Redis |
-
-## Instalação rápida
+## Clone e abrir no Cursor
 
 ```bash
-# Clonar o repositório
 git clone https://github.com/Leftwardz/estudos-lab.git
 cd estudos-lab
-
-# Verificar estrutura
-ls tracks/
 ```
 
-## Como estudar
+1. Abra a pasta `estudos-lab` no Cursor (**File → Open Folder**)
+2. A regra `estudos.mdc` entra em modo ensino automaticamente
+3. Comece pelo índice: [tracks/README.md](tracks/README.md)
 
-1. Escolha uma trilha em `tracks/README.md`
-2. Leia `curriculum.md` da trilha para ver os módulos
-3. Consulte `CONCEITOS.md` antes de cada módulo
-4. Use `FOCO.md` para saber o objetivo da sessão
-5. Registre avanço em `progress.md`
-6. Salve anotações e exercícios em `sessoes/`
+## Publicar alterações (progresso, anotações)
 
-## Estrutura de pastas
+```bash
+git add tracks/<trilha>/progress.md CONCEITOS.md sessoes/
+git commit -m "Estudos: conclui módulo NN da trilha X"
+git push origin main
+```
+
+Trabalhe direto na `main` — este repo é seu caderno de estudos.
+
+## Estrutura esperada
 
 ```
 estudos-lab/
-├── SETUP.md                 # Este arquivo
-├── tracks/
-│   ├── README.md            # Índice das trilhas
-│   ├── git/
-│   ├── api-auth-db/
-│   ├── frontend/
-│   ├── devops/
-│   ├── cloud/
-│   └── banco-nao-relacional/
-├── sessoes/                 # Anotações e exercícios por data
-└── .cursor/rules/
-    └── estudos.mdc          # Regras do Cursor para estudos
+├── README.md
+├── FOCO.md
+├── CONCEITOS.md
+├── SETUP.md
+├── .gitignore
+├── .cursor/rules/estudos.mdc
+├── sessoes/_TEMPLATE.md
+├── templates/nova-trilha/
+└── tracks/
+    ├── README.md          ← índice principal
+    └── <trilha>/          ← README + curriculum + progress
 ```
+
+## Projetos de prática (fora deste repo)
+
+| Trilha | Repo sugerido |
+|--------|---------------|
+| git | `git-sandbox` |
+| api-auth-db | projeto API FastAPI separado |
+| frontend | projeto web React separado |
+| devops / cloud | mesma API ou derivado dela |
+| banco-nao-relacional | API + Redis + Mongo conforme módulo |
+
+## Pré-requisitos por trilha
+
+| Ferramenta | Trilhas |
+|------------|---------|
+| Git 2.30+ | todas |
+| Node 20+ | frontend |
+| Python 3.11+ | api-auth-db |
+| Docker | api-auth-db, devops, banco-nao-relacional |
+| Conta Azure (free tier) | cloud |
 
 ## Convenção de sessões
 
-Crie arquivos em `sessoes/` com o formato:
+Copie [sessoes/_TEMPLATE.md](sessoes/_TEMPLATE.md) para:
 
 ```
 sessoes/YYYY-MM-DD-<trilha>-modulo-NN.md
 ```
 
-Exemplo: `sessoes/2026-07-17-git-modulo-01.md`
-
-## Dicas
-
-- Estude um módulo por sessão; marque como concluído em `progress.md`
-- Faça commits pequenos ao praticar exercícios
-- Use branches para experimentos: `estudo/<trilha>-modulo-NN`
+Ao terminar, diga: **"Fim da sessão — atualiza progresso"**

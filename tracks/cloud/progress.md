@@ -1,16 +1,14 @@
 # Progresso — Cloud
 
-| Módulo | Título | Status | Data |
-|--------|--------|--------|------|
-| 01 | Introdução à nuvem | ⬜ Pendente | — |
-| 02 | Compute na nuvem | ⬜ Pendente | — |
-| 03 | Storage e CDN | ⬜ Pendente | — |
-| 04 | Redes na nuvem | ⬜ Pendente | — |
-| 05 | Bancos gerenciados | ⬜ Pendente | — |
-| 06 | Mensageria e filas | ⬜ Pendente | — |
-| 07 | Identidade e segurança (IAM) | ⬜ Pendente | — |
-| 08 | Arquitetura e custos | ⬜ Pendente | — |
+| Módulo | Título | Concluído | Data |
+|--------|--------|-----------|------|
+| 01 | Modelo mental (IaaS/PaaS/SaaS) | [ ] | — |
+| 02 | Fundamentos Azure aplicados | [ ] | — |
+| 03 | Blob storage para artefatos/releases | [ ] | — |
+| 04 | Banco gerenciado Postgres | [ ] | — |
+| 05 | Hospedar API (App Service / Container Apps) | [ ] | — |
+| 06 | DNS e HTTPS | [ ] | — |
+| 07 | Secrets (Key Vault) | [ ] | — |
+| 08 | Monitoramento e custo | [ ] | — |
 
-**Progresso:** 0/8 (0%)
-
-Legenda: ⬜ Pendente · 🔄 Em andamento · ✅ Concluído
+**Progresso:** 0/8

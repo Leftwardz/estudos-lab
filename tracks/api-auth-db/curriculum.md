@@ -1,68 +1,146 @@
-# Trilha: API, Auth e Banco de Dados
+# Curriculum — API + Auth + Banco
 
-Construção de APIs REST com autenticação, autorização e persistência em banco relacional.
+FastAPI, PostgreSQL, JWT. Repo de prática: **projeto API separado**.
 
-## Módulos
+---
 
-### Módulo 01 — Fundamentos de HTTP
-- Métodos (GET, POST, PUT, PATCH, DELETE)
-- Status codes, headers, body
-- **Exercício:** Testar endpoints públicos com curl
+### Módulo 01 — FastAPI Hello API
 
-### Módulo 02 — REST e design de APIs
-- Recursos, URIs, idempotência
-- Versionamento e paginação
-- **Exercício:** Desenhar API de um CRUD de tarefas (OpenAPI ou markdown)
+**Conceitos**
+- App FastAPI, rota GET, Uvicorn
+- Estrutura mínima de projeto Python
 
-### Módulo 03 — Primeira API com Node/Express
-- Rotas, middleware, JSON
-- **Exercício:** API `/health` e CRUD em memória
+**Exercício**
+Crie app com `GET /health` retornando `{"status": "ok"}`.
 
-### Módulo 04 — Banco relacional e SQL
-- Tabelas, chaves primárias e estrangeiras
-- SELECT, INSERT, UPDATE, DELETE
-- **Exercício:** Criar schema `users` e `tasks` no PostgreSQL
+---
 
-### Módulo 05 — ORM e migrations
-- Prisma ou TypeORM
-- Migrations up/down
-- **Exercício:** Conectar API ao PostgreSQL com migrations
+### Módulo 02 — Estrutura de projeto
 
-### Módulo 06 — Validação e tratamento de erros
-- Validação de entrada (Zod, Joi)
-- Middleware de erro centralizado
-- **Exercício:** Validar body de POST `/users`
+**Conceitos**
+- Separação: `routes`, `models`, `services`
+- Injeção de dependências básica
+- Organização escalável de pastas
 
-### Módulo 07 — Autenticação com JWT
-- Login, registro, hash de senha (bcrypt)
-- Access token e refresh token
-- **Exercício:** Endpoints `/auth/register` e `/auth/login`
+**Exercício**
+Reorganize o Hello API em pastas `routes/`, `models/`, `services/`.
 
-### Módulo 08 — Autorização e RBAC
-- Roles (admin, user)
-- Middleware de permissão
-- **Exercício:** Rotas admin protegidas por role
+---
 
-### Módulo 09 — Sessões e cookies
-- HttpOnly cookies vs Bearer token
-- CSRF básico
-- **Exercício:** Login com cookie de sessão
+### Módulo 03 — PostgreSQL + Docker
 
-### Módulo 10 — Testes de API
-- Testes de integração com supertest
-- Fixtures e banco de teste
-- **Exercício:** Suite de testes para auth e CRUD
+**Conceitos**
+- Container PostgreSQL com Docker
+- Variáveis de conexão (`DATABASE_URL`)
+- Volume para persistência
 
-### Módulo 11 — Documentação OpenAPI
-- Swagger UI
-- Schemas e exemplos
-- **Exercício:** Documentar API completa em `/docs`
+**Exercício**
+Suba Postgres via Docker e conecte a API (mesmo que só logando conexão ok).
 
-### Módulo 12 — Deploy e variáveis de ambiente
-- `.env`, secrets, 12-factor app
-- Health check e graceful shutdown
-- **Exercício:** Containerizar API com Docker
+---
 
-## Critério de conclusão
+### Módulo 04 — SQLAlchemy e modelos
 
-API funcional com auth, banco PostgreSQL, testes e documentação; 12 módulos em `progress.md`.
+**Conceitos**
+- ORM, engine, session
+- Modelos declarativos, tabelas
+- Migrations (Alembic intro)
+
+**Exercício**
+Crie modelo `User` (id, email, password_hash) e gere tabela no banco.
+
+---
+
+### Módulo 05 — CRUD REST
+
+**Conceitos**
+- Endpoints REST para recurso
+- Status HTTP corretos (200, 201, 404, 204)
+- Path params e query params
+
+**Exercício**
+Implemente CRUD completo de um recurso (ex.: `items` ou `licenses`).
+
+---
+
+### Módulo 06 — Validação Pydantic
+
+**Conceitos**
+- Schemas request/response
+- Validação automática, erros 422
+- Separar schema de ORM model
+
+**Exercício**
+Crie schemas Pydantic para create/update/response do seu recurso.
+
+---
+
+### Módulo 07 — Endpoint core de negócio
+
+**Conceitos**
+- Regra de negócio na camada `services`
+- Validação de licença/recurso (exemplo de domínio real)
+- Erros de negócio vs erros técnicos
+
+**Exercício**
+Implemente endpoint que valida licença ou recurso (ex.: `POST /licenses/validate`).
+
+---
+
+### Módulo 08 — Autenticação JWT
+
+**Conceitos**
+- Registro e login com hash de senha (bcrypt)
+- Access token JWT
+- Dependency `get_current_user`
+
+**Exercício**
+Endpoints `/auth/register`, `/auth/login` e rota protegida `/me`.
+
+---
+
+### Módulo 09 — OpenAPI / Swagger
+
+**Conceitos**
+- Documentação automática FastAPI (`/docs`)
+- Tags, descriptions, exemplos
+- Bearer token no Swagger UI
+
+**Exercício**
+Documente todos os endpoints com tags, descrições e exemplo de auth.
+
+---
+
+### Módulo 10 — Testes Pytest
+
+**Conceitos**
+- `TestClient` do FastAPI
+- Fixtures, banco de teste
+- Testes de auth e CRUD
+
+**Exercício**
+Suite com pelo menos 5 testes cobrindo health, CRUD e login.
+
+---
+
+### Módulo 11 — Endpoint de releases/versões
+
+**Conceitos**
+- Versionamento de artefatos/releases
+- Listagem e download metadata
+- Integração futura com frontend e blob storage
+
+**Exercício**
+`GET /releases` listando versões; `GET /releases/{version}` com detalhes.
+
+---
+
+### Módulo 12 — Webhook de pagamento (mock)
+
+**Conceitos**
+- Webhooks: receber eventos externos
+- Validação de payload, idempotência básica
+- Atualizar estado no banco (ex.: licença ativa)
+
+**Exercício**
+`POST /webhooks/payment` com payload mock que ativa licença no banco.

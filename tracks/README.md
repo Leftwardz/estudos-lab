@@ -1,42 +1,46 @@
-# Trilhas de Estudo
+# Índice das trilhas
 
-Laboratório organizado em 6 trilhas progressivas. Cada trilha tem módulos numerados, conceitos de referência e acompanhamento de progresso.
+Leia este arquivo quando perguntar: **"Quais estudos temos no foco?"**
 
-## Índice
+Laboratório com 6 trilhas flexíveis — **a ordem não é obrigatória**. Alterne conforme seu humor e energia.
 
-| Trilha | Módulos | Descrição |
-|--------|---------|-----------|
-| [git](./git/curriculum.md) | 10 | Controle de versão, branching, merge e fluxos de trabalho |
-| [api-auth-db](./api-auth-db/curriculum.md) | 12 | APIs REST, autenticação, autorização e banco relacional |
-| [frontend](./frontend/curriculum.md) | 10 | HTML, CSS, JavaScript e frameworks modernos |
-| [devops](./devops/curriculum.md) | 8 | CI/CD, containers, infraestrutura como código |
-| [cloud](./cloud/curriculum.md) | 8 | Serviços em nuvem, deploy e arquitetura distribuída |
-| [banco-nao-relacional](./banco-nao-relacional/curriculum.md) | 7 | NoSQL, documentos, cache e modelagem alternativa |
+## Trilhas
+
+| Trilha | Módulos | Tema | Links |
+|--------|---------|------|-------|
+| [git](./git/) | 10 | Git profissional (fluxo empresa) | [curriculum](./git/curriculum.md) · [progresso](./git/progress.md) |
+| [api-auth-db](./api-auth-db/) | 12 | API REST, auth, banco relacional | [curriculum](./api-auth-db/curriculum.md) · [progresso](./api-auth-db/progress.md) |
+| [frontend](./frontend/) | 10 | React | [curriculum](./frontend/curriculum.md) · [progresso](./frontend/progress.md) |
+| [devops](./devops/) | 8 | Docker, CI/CD | [curriculum](./devops/curriculum.md) · [progresso](./devops/progress.md) |
+| [cloud](./cloud/) | 8 | Cloud (Azure) | [curriculum](./cloud/curriculum.md) · [progresso](./cloud/progress.md) |
+| [banco-nao-relacional](./banco-nao-relacional/) | 7 | Postgres vs Redis vs Mongo | [curriculum](./banco-nao-relacional/curriculum.md) · [progresso](./banco-nao-relacional/progress.md) |
 
 **Total: 55 módulos**
 
-## Arquivos por trilha
-
-Cada pasta em `tracks/<nome>/` contém:
-
-| Arquivo | Propósito |
-|---------|-----------|
-| `curriculum.md` | Lista de módulos, objetivos e exercícios |
-| `CONCEITOS.md` | Glossário e referência rápida |
-| `FOCO.md` | Objetivo da sessão atual e prioridades |
-| `progress.md` | Checklist de módulos concluídos |
-
-## Ordem sugerida
+## Ordem sugerida (não obrigatória)
 
 ```
 git → api-auth-db → frontend → devops → cloud → banco-nao-relacional
 ```
 
-A ordem não é obrigatória. Trilhas independentes (ex.: `frontend` e `git`) podem ser feitas em paralelo.
+Trilhas independentes (ex.: `git` e `frontend`) podem rodar em paralelo.
 
-## Início rápido
+## Como marcar progresso
 
-1. Leia [SETUP.md](../SETUP.md)
-2. Abra a trilha desejada e leia `curriculum.md`
-3. Atualize `FOCO.md` com o módulo do dia
-4. Registre a sessão em `sessoes/`
+1. Estude o módulo seguindo `tracks/<trilha>/curriculum.md`
+2. Ao concluir, marque `[x]` em `tracks/<trilha>/progress.md` com a data
+3. Registre conceitos em [CONCEITOS.md](../CONCEITOS.md) (raiz)
+4. Opcional: anote a sessão em `sessoes/` usando `_TEMPLATE.md`
+5. Diga ao agente: **"Fim da sessão — atualiza progresso"**
+
+## Arquivos por trilha (3)
+
+| Arquivo | Conteúdo |
+|---------|----------|
+| `README.md` | Visão geral e repo de prática |
+| `curriculum.md` | Módulos com **Conceitos** e **Exercício** |
+| `progress.md` | Checklist `[ ]` / `[x]` por módulo |
+
+## Foco do dia
+
+Opcional: preencha [FOCO.md](../FOCO.md) na raiz com trilha, módulo e energia.
