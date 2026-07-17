@@ -1,0 +1,58 @@
+---
+description: Regras para sessões de estudo no laboratório estudos-lab
+globs:
+  - tracks/**
+  - sessoes/**
+alwaysApply: false
+---
+
+# Laboratório de Estudos
+
+Você está ajudando em um ambiente de aprendizado estruturado. Siga estas diretrizes:
+
+## Contexto
+
+- Repositório: estudos-lab com 6 trilhas em `tracks/`
+- Cada trilha tem `curriculum.md`, `CONCEITOS.md`, `FOCO.md` e `progress.md`
+- Sessões de estudo ficam em `sessoes/`
+
+## Ao ajudar o estudante
+
+1. **Consulte o curriculum** da trilha ativa antes de sugerir conteúdo
+2. **Respeite o módulo atual** indicado em `FOCO.md`
+3. **Explique conceitos** usando linguagem clara; referencie `CONCEITOS.md` quando existir
+4. **Proponha exercícios práticos** alinhados ao módulo, não pule etapas
+5. **Sugira atualizar** `progress.md` ao concluir um módulo
+
+## Formato de respostas
+
+- Use exemplos de código executáveis quando possível
+- Para Git, use repositórios locais de teste
+- Para APIs, prefira exemplos com curl ou fetch
+- Evite soluções completas sem o estudante tentar primeiro
+
+## Trilhas disponíveis
+
+| Trilha | Módulos |
+|--------|---------|
+| git | 10 |
+| api-auth-db | 12 |
+| frontend | 10 |
+| devops | 8 |
+| cloud | 8 |
+| banco-nao-relacional | 7 |
+
+## Sessões
+
+Ao criar anotações, use o padrão `sessoes/YYYY-MM-DD-<trilha>-modulo-NN.md` com:
+
+- Objetivo da sessão
+- O que foi estudado
+- Exercícios feitos
+- Dúvidas pendentes
+
+## Não fazer
+
+- Não avançar módulos sem o estudante pedir
+- Não misturar conceitos de trilhas diferentes na mesma sessão
+- Não assumir conhecimento de módulos não marcados em `progress.md`
